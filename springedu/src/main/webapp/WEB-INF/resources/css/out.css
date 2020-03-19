@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+.container11 {
+	border: 1px solid #e8e8e8;
+	width: 428px;
+	margin: 10px auto 60px;
+	padding: 27px 0 30px 0;
+	color: #111;
+	border-radius: 16px;
+	margin-top: 100px;
+	margin-bottom: 140px;
+}
+
+.container12 {
+	display: flex;
+	justify-content: center;
+}
+
+.login-content {
+	align-items: center;
+	padding-left: 38px;
+}
+
+.login-content>div {
+	margin: 10px 0;
+}
+
+.login-content input {
+	width: 100%;
+	border: 1px solid #black;
+}
+
+.login-content input[type="submit"] {
+	background-color: #222;
+	border: 1px solid #111;
+	color: white;
+	height: 54px;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+.login-title {
+	text-align: center;
+	margin: 0 0 19px 0;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+#id, #pw {
+	width: 328px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 11px;
+}
+
+#outBtn {
+	width: 328px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#frm {
+	padding: 10px;
+}
+/*비밀번호 찾기*/
+.find_info {
+	margin-top: 20px;
+	font-size: 0.7rem;
+	color: gray;
+	letter-spacing: 0.5px;
+	text-align: center;
+}
+
+.find_info>a {
+	text-decoration: none;
+	color: gray;
+}
+
+.find_info>a:hover {
+	text-decoration: underline;
+}
+
+/* 오류 메세지 */
+.errmsg {
+	color: red;
+	font-size: 10px;
+	font-weight: bold;
+}

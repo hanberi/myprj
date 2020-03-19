@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+div {
+	box-sizing: border-box;
+}
+
+form {
+	margin-top: 50px;
+}
+
+.container11 {
+	border: 1px solid #e8e8e8;
+	width: 428px;
+	margin: 10px auto 60px;
+	padding: 27px 0 0 0;
+	color: #111;
+	border-radius: 16px;
+	margin-top: 100px;
+	margin-bottom: 70px;
+}
+
+.container12 {
+	display: flex;
+	justify-content: center;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	margin-bottom: 100px;
+}
+
+.content div {
+	flex: 1 1 20px;
+	line-height: 0.7rem;
+}
+
+.content div:nth-child(3n) {
+	border: 1px solid gray;
+	padding: 6px;
+	padding-left: 5px;
+	background-color: white;
+}
+
+.join-title {
+	text-align: center;
+	margin: 0 0 30px 0;
+	font-size: 17px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+label {
+	font-size: 13px;
+}
+
+div input {
+	width: 250px;
+	border: none;
+	font-size: 11px;
+}
+
+input[type=radio] {
+	width: auto;
+}
+
+#modifyBtn {
+	background-color: #222;
+	color: white;
+	font-size: 12px;
+	height: 54px;
+	border: 1px solid #111;
+	padding: 5px;
+}
+#outBtn {
+	background-color: #222;
+	color: white;
+	font-size: 12px;
+	height: 54px;
+	border: 1px solid #111;
+	padding: 18px;
+	margin-top: 10px;
+	text-align: center;
+	align-content: center;
+	justify-content: center;
+}
+
+i {
+	padding: 5px 4px;
+}
+
+label {
+	vertical-align: top;
+}
+
+button, select {
+	border: none;
+}
+
+button {
+	width: 300px;
+}
+
+select {
+	width: 270px;
+	font-size: 12px;
+}
+/* 오류 메세지 */
+.errmsg {
+	color: red;
+	font-size: 11px;
+}

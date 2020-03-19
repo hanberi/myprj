@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.ImageBoardDAO-mapper">
+
+<!-- 이미지게시판 전체 목록 -->
+<select id="imageList" 
+		resultType="ImageBoardVO">
+select 
+     image_num AS imageNum,
+     image_title AS imageTitle,
+     image_id AS imageId,
+     image_url AS imageUrl,
+     image_hit AS imageHit
+from img_board
+order by image_num
+</select>
+<!-- 이미지 게시물 보기 -->
+<select id="detailImage" 
+		resultType="ImageBoardVO" 
+		parameterType="int">
+select 
+     image_num AS imageNum,
+     image_title AS imageTitle,
+     image_id AS imageId,
+     image_url AS imageUrl,
+     image_hit AS imageHit,
+     image_desc AS imageDesc,
+     image_cdate AS imageCdate
+from img_board
+where image_num = ${imageNum}
+</select>
+
+<!-- 게시글 작성 -->
+<insert id="write" parameterType="ImageBoardVO">
+insert into IMG_BOARD(
+    image_num,
+    image_title,
+    image_id,
+    image_desc,
+    image_url
+)values(
+	IMG_BOARD_IMAGE_NUM_SEQ.NEXTVAL,
+	#{imageTitle},
+	#{imageId},
+	#{imageDesc},
+	#{imageUrl,jdbcType=VARCHAR })
+
+<selectKey keyProperty="imageNum" resultType="int" order="AFTER">
+	select IMG_BOARD_IMAGE_NUM_SEQ.currval from dual
+</selectKey>
+</insert>
+
+<!-- 조회수 +1증가 -->
+<update id="updateHit" >
+update IMG_BOARD
+	 set image_hit = image_hit + 1
+		 where image_num = #{imageNum}
+</update>
+<!-- 첨부파일 저장  -->
+	<insert id="fileWrite"
+					parameterType="BoardFileVO">
+		insert into board_upload_file	(
+			  fid, 	  imgnum, 	 fname, 	 fsize, 	 ftype, 	 fdata
+		)values(
+			board_upload_file_fid_seq.nextval, #{imageNum}, #{fname}, #{fsize}, #{ftype}, #{fdata} 				
+		)			
+	
+	</insert>
+<!-- 첨부파일 가져오기 -->
+<select id="fileViews"
+				parameterType="int"
+				resultType="BoardFileVO">
+				
+	SELECT fid, fname, fsize, ftype, fdata, cdate, udate,imgnum
+	  FROM board_upload_file
+	 where imgnum = #{imageNum}
+	 order by fid desc 				
+</select>
+<!-- 첨부파일 조회 -->
+	<select id="fileView"
+					parameterType="long"
+					resultType="BoardFileVO">
+					
+		SELECT fid, imgnum, fname, fsize, ftype, fdata, cdate, udate
+		  FROM board_upload_file
+		 where fid = #{fid}					
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

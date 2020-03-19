@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.container11 {
+	border: 1px solid #e8e8e8;
+	width: 428px;
+	margin: 100px auto 100px;
+	padding: 27px 0 30px 0;
+	color: #111;
+	border-radius: 16px;
+}
+
+.container12 {
+	display: flex;
+	justify-content: center;
+}
+
+.login-title {
+	text-align: center;
+	margin: 0 0 19px 0;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 60%;
+}
+
+table, th, td {
+	border: 1px solid white;
+}
+
+button {
+	width: 100%;
+}
+
+tr {
+	padding: 3px;
+}
+
+tr.hide {
+	display: none;
+}
+
+th {
+	font-size: 12px;
+}
+
+tr>th {
+	text-align: left;
+	padding-right: 5px;
+	min-width: 70px;
+}
+
+tr>td {
+	padding: 3px;
+	min-width: 200px;
+	margin: 3px;
+}
+
+td input {
+	width: 95%;
+	height: 30px;
+	padding: 3px;
+	margin: 3px;
+	font-size: 11px;
+}
+
+#findBtn {
+	background-color: #222;
+	border: 1px solid #111;
+	color: white;
+	height: 54px;
+	width: 328px;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+/* 오류 메세지 */
+.errmsg {
+	color: red;
+	font-size: 10px;
+	font-weight: bold;
+}
